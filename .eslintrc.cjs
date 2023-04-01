@@ -61,5 +61,13 @@ module.exports = {
         pathGroupsExcludedImportTypes: ['vue*']
       }
     ]
-  }
+  },
+  overrides: [
+    {
+      files: ['*.ts', '*.vue'],
+      rules: {
+        'no-undef': 'off'
+      }
+    }
+  ]
 };
