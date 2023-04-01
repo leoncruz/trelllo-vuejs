@@ -1,25 +1,26 @@
-import { createApp } from 'vue'
+import { createApp } from 'vue';
 import { createRouter, createWebHistory } from 'vue-router';
 
-import App from './App.vue'
-import Home from './pages/Home.vue';
-import About from './pages/About.vue';
-import NotFoundPage from './pages/404.vue';
+import NotFound from 'pages/404.vue';
+import About from 'pages/About.vue';
+import Home from 'pages/Home.vue';
 
-import './assets/css/index.css';
+import App from '@/App.vue';
+
+import 'assets/css/index.css';
 
 const routes = [
-  { path: '/:pathMatch(.*)*', component: NotFoundPage },
+  { path: '/:pathMatch(.*)*', component: NotFound },
   { path: '/', component: Home },
-  { path: '/about', component: About },
-]
+  { path: '/about', component: About }
+];
 
 const router = createRouter({
   history: createWebHistory(),
-  routes,
-})
+  routes
+});
 
-const app = createApp(App, {})
+const app = createApp(App, {});
 
-app.use(router)
-app.mount('#app')
+app.use(router);
+app.mount('#app');
