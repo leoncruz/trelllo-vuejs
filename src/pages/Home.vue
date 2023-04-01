@@ -1,0 +1,10 @@
+<template>
+  <h1 class="text-3xl">Home Page</h1>
+</template>
+
+<style scoped>
+</style>
+
+<script setup lang="ts">
+</script>
+
