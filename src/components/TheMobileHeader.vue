@@ -36,9 +36,12 @@
 </template>
 
 <script setup lang="ts">
-import { computed, ref } from 'vue';
+import { computed, ref, watch } from 'vue';
+import { useRoute } from 'vue-router';
 
 import AppLink from 'components/AppLink.vue';
+
+const route = useRoute();
 
 const isOpen = ref(false);
 
@@ -54,6 +57,10 @@ const classOptions = computed(() => {
 function toggleMenu() {
   isOpen.value = !isOpen.value;
 }
+
+watch(route, async () => {
+  isOpen.value = false;
+});
 </script>
 
 <style scoped>
